@@ -1,0 +1,16 @@
+{
+    "provider": {
+      "azurerm": {
+        "features": {},
+        "subscription_id": "33db2cec-3605-467d-8216-742b23f46591"
+      }
+    },
+    "resource": {
+      "azurerm_resource_group": {
+        "cpisteam": {
+          "name": "cpisteam",
+          "location": "West US"
+        }
+      }
+    }
+  }

@@ -1,0 +1,18 @@
+#This is pipeline
+
+trigger:
+- main
+
+pool:
+    vmImage: 'ubuntu-latest'
+
+variables:
+
+    terraformWorkingDirectory: './'
+    ARM_SUBSCRIPTION_ID: "33db2cec-3605-467d-8216-742b23f46591"  
+    ARM_CLIENT_ID: " d40941fa-dda9-4cb6-b8fd-0019405a868b "     
+    ARM_CLIENT_SECRET: "b4286737-0b83-4354-b4ce-fb228c310ad7"  
+    ARM_TENANT_ID: "bb5b546b-3434-4ff0-98cb-6ccf862555a5"                    
+
+steps:
+- task: Checkout@2
