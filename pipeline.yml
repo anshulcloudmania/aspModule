@@ -7,7 +7,6 @@ pool:
     vmImage: 'ubuntu-latest'
 
 variables:
-
     terraformWorkingDirectory: './'
     ARM_SUBSCRIPTION_ID: "33db2cec-3605-467d-8216-742b23f46591"  
     ARM_CLIENT_ID: " d40941fa-dda9-4cb6-b8fd-0019405a868b "     
@@ -16,3 +15,18 @@ variables:
 
 steps:
 - task: Checkout@2
+
+- script: |
+    terraform init -input=false
+  workingDirectory: './'
+  displayName: 'Terraform Init'
+
+- script: |
+    terraform apply -input=false -auto-approve -var-file="main.json"
+  workingDirectory: $('terraformWorkingDirectory')
+  displayName: 'Terraform Apply'
+  env:
+    ARM_SUBSCRIPTION_ID: $('ARM_SUBSCRIPTION_ID')
+    ARM_CLIENT_ID: $('ARM_CLIENT_ID')     
+    ARM_CLIENT_SECRET: $('ARM_CLIENT_SECRET')  
+    ARM_TENANT_ID: $('ARM_TENANT_ID')  
