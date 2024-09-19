@@ -23,10 +23,10 @@ steps:
 
 - script: |
     terraform apply -input=false -auto-approve -var-file="main.json"
-  workingDirectory: $('terraformWorkingDirectory')
+  workingDirectory: $(terraformWorkingDirectory)
   displayName: 'Terraform Apply'
   env:
-    ARM_SUBSCRIPTION_ID: $('ARM_SUBSCRIPTION_ID')
-    ARM_CLIENT_ID: $('ARM_CLIENT_ID')     
-    ARM_CLIENT_SECRET: $('ARM_CLIENT_SECRET')  
-    ARM_TENANT_ID: $('ARM_TENANT_ID')  
+    ARM_SUBSCRIPTION_ID: $(ARM_SUBSCRIPTION_ID)
+    ARM_CLIENT_ID: $(ARM_CLIENT_ID)     
+    ARM_CLIENT_SECRET: $(ARM_CLIENT_SECRET)  
+    ARM_TENANT_ID: $(ARM_TENANT_ID)  
